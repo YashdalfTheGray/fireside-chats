@@ -1,0 +1,33 @@
+.icon-button-adjust {
+    vertical-align: middle;
+}
+
+.spacer-sm {
+    margin: 5px;
+}
+
+.spacer-md {
+    margin: 10px;
+}
+
+.spacer-lg {
+    margin: 20px;
+}
+
+.spacer-hg {
+    margin: 50px;
+}
+
+.chat-list-item {
+    margin: 20px;
+}
+
+.chat-list-item > span {
+    cursor: pointer;
+    cursor: hand;
+}
+
+.nothing-to-see-here {
+    width: 600px;
+    height: 480px;
+}
