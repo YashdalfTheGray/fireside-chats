@@ -10,6 +10,8 @@
 * Physical Security - it's as simple as avoid giving access to the server room.
 * Hardware security - "The USB drive in the parking lot"
 * Software Security - confidentiality and authencity
+* Security by obscurity is not security, it's stupid.
+* Most security issues are going to be [layer 8](https://en.wikipedia.org/wiki/Layer_8) issues, you have to make sure that the other layers are fit to handle them. 
 
 ## Confidentiality and Authenticity
 
