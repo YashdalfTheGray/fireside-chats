@@ -31,3 +31,7 @@
     width: 600px;
     height: 480px;
 }
+
+.slide-container {
+    position: relative;
+}
