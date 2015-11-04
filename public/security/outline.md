@@ -17,7 +17,7 @@ Communication between two points can be called safe when both confidentiality an
 
 Confidentiality means that the real message was only seen by the two end points and no other party. 
 
-Authenticity of the message certifies that the message gets to the correct recipient. 
+Authenticity of the message certifies that the message gets to the correct recipient and it's the message that the sender wanted to send. 
 
 ## Some terms
 
@@ -63,6 +63,16 @@ To have an TLS compatible server, you need a certificate. A certificate can eith
 
 ## Generating an SSL Cert
 
+OpenSSL(http://www.openssl.org/) is a TLS/SSL toolkit that can be used to help with enabling TLS on a website. The process is simple, generate a key, generate a certificate (you need to provide details about your domain, location, etc.) and then sign the certificate with the key. The key and the certificate can then be passed to the server to serve out with the HTTPS request. 
 
+## Certificate Authorities
+
+Signing the certificate yourself is *only* good for development purposes or getting the job done until you get a signed certificate back from a Certificate Authority. A Certificate Authority is a recognized organization that can vouch for the security of your website or web app. 
+
+The Linux Foundation, EFF, Mozilla, Cisco and Akamai got together and created the first free, automated CA called [Let's Encrypt](https://letsencrypt.org/) this past July and it is currently in limited beta. They are looking be fully up and running very soon. 
 
 ## Hashing
+
+Hashing is the process of mapping data of an arbitrary size to data of fixed size. Hashing is a one-way operation unlike encryption and will vary widely when small changes are made to the input data. This is used to certify the authencity of the message. 
+
+If you've ever downloaded a file and have seen an md5 or an sha1 field with a large alphanumeric string, that's the hash. It certified that the bits in the original data and your copy match provides the hashes match. It is a quicker way of verifying the integrity of the message. 
