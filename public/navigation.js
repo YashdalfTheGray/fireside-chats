@@ -40,8 +40,8 @@ angular.module('firesideChats')
             };
 
             vm.chats = [
-                { name: 'Security and Encryption', state: 'security-slide0', maxSlides: 10 },
-                { name: 'Async execution and Promises', state: 'async-slide0', maxSlides: 10 }
+                { name: 'Security and Encryption', state: 'security-slide0', maxSlides: 9 },
+                { name: 'Async execution and Promises', state: 'async-slide0', maxSlides: 1 }
             ];
         }
     ]

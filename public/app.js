@@ -45,6 +45,26 @@ angular.module('firesideChats',
                 templateUrl: 'security/slide4.tpl.html',
                 controller: 'SlideCtrl as ctrl'
             })
+            .state('security-slide5', {
+                url: '/security/5',
+                templateUrl: 'security/slide5.tpl.html',
+                controller: 'SlideCtrl as ctrl'
+            })
+            .state('security-slide6', {
+                url: '/security/6',
+                templateUrl: 'security/slide6.tpl.html',
+                controller: 'SlideCtrl as ctrl'
+            })
+            .state('security-slide7', {
+                url: '/security/7',
+                templateUrl: 'security/slide7.tpl.html',
+                controller: 'SlideCtrl as ctrl'
+            })
+            .state('security-slide8', {
+                url: '/security/8',
+                templateUrl: 'security/slide8.tpl.html',
+                controller: 'SlideCtrl as ctrl'
+            })
             .state('async-slide0', {
                 url: '/async/0',
                 templateUrl: 'async/slide0.tpl.html',
