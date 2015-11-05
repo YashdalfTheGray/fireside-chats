@@ -3,8 +3,8 @@
 angular.module('firesideChats')
 .controller('SlideCtrl',
     [
-        '$rootScope', '$state',
-        function($rootScope, $state) {
+        '$rootScope', '$window', '$state',
+        function($rootScope, $window, $state) {
             "use strict";
 
             var vm = this;
@@ -43,6 +43,10 @@ angular.module('firesideChats')
             vm.getSlideNum = function() {
                 return parseInt($state.current.name[$state.current.name.length - 1]);
             };
+
+            vm.external = function(link) {
+                $window.open(link, '_blank');
+            }
         }
     ]
 );
