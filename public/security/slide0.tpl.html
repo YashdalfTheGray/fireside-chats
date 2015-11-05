@@ -16,10 +16,10 @@
         </md-button>
     </md-fab-trigger>
     <md-fab-actions>
-        <md-button aria-label="Next" class="md-fab md-accent md-raised md-mini" ng-mouseleave="ctrl.openActions = false" ng-click="ctrl.next()" ng-disabled="ctrl.getSlideNum() === ctrl.maxSlides">
+        <md-button aria-label="Next" class="md-fab md-accent md-raised md-mini" ng-click="ctrl.next()" ng-disabled="ctrl.getSlideNum() === ctrl.maxSlides">
             <i class="material-icons icon-button-adjust">arrow_forward</i>
         </md-button>
-        <md-button aria-label="Back" class="md-fab md-raised md-mini" ng-mouseleave="ctrl.openActions = false" ng-click="ctrl.back()" ng-disabled="ctrl.getSlideNum() === 0">
+        <md-button aria-label="Back" class="md-fab md-raised md-mini" ng-click="ctrl.back()" ng-disabled="ctrl.getSlideNum() === 0">
             <i class="material-icons icon-button-adjust">arrow_back</i>
         </md-button>
         <md-button aria-label="Home" class="md-fab md-raised md-mini" ng-mouseleave="ctrl.openActions = false" ng-click="ctrl.home()">
