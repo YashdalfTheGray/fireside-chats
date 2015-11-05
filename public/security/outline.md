@@ -27,6 +27,8 @@ Authenticity of the message certifies that the message gets to the correct recip
 
 *Ciphertext* - Message that has been encrypted and can only be decrypted by the right person. 
 
+*Salt* - A randomly generated string of characters used to add variability. 
+
 *Public Key* - A key that can be shared or hosted publically. It is used to encrypt the message that you're being sent. 
 
 *Private Key* - A key that should NEVER be shared. It should be kept in a safe place. This is used to decrypt the message that was sent to you.
