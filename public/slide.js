@@ -9,23 +9,40 @@ angular.module('firesideChats')
 
             var vm = this;
 
+            vm.maxSlides = $rootScope.maxSlides - 1;
+
+            function getNextState(currentState, direction) {
+                var stateLength = currentState.length;
+                var slideNum = parseInt(currentState[stateLength - 1]);
+
+                if (direction === 'up') {
+                    slideNum++;
+                }
+                else if (direction === 'down') {
+                    slideNum--;
+                }
+                
+                return currentState.substring(0, stateLength - 1) + slideNum.toString();
+            };
+
             vm.next = function() {
-                var slideNum = $state.current.name[$state.current.name.length - 1];
                 vm.openActions = false;
-                console.log('Navigating to next!');
-                console.log(slideNum);
+                $state.go(getNextState($state.current.name, 'up'));
             };
 
             vm.back = function() {
-                var slideNum = $state.current.name[$state.current.name.length - 1];
                 vm.openActions = false;
-                console.log('Navigating to previous!');
+                $state.go(getNextState($state.current.name, 'down'));
             };
 
             vm.home = function() {
                 vm.openActions = false;
                 $state.go('home');
-            }
+            };
+
+            vm.getSlideNum = function() {
+                return parseInt($state.current.name[$state.current.name.length - 1]);
+            };
         }
     ]
 );
