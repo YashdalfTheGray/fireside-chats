@@ -1,14 +1,19 @@
 <md-content layout-padding layout="column" layout-fill>
     <h2 flex>Some Security Terms</h2>
     
-    <md-list flex>
-        <md-list-item>Plaintext</md-list-item>
-        <md-list-item>Ciphertext</md-list-item>
-        <md-list-item>Public Key</md-list-item>
-        <md-list-item>Private Key</md-list-item>
-        <md-list-item>Symmetric Key Cryptography</md-list-item>
-        <md-list-item>Public Key Cryptography</md-list-item>
-    </md-list>
+    <div layout="row" flex>
+        <md-list flex="50">
+            <md-list-item>Public Key</md-list-item>
+            <md-list-item>Private Key</md-list-item>
+            <md-list-item>Symmetric Key Cryptography</md-list-item>
+            <md-list-item>Public Key Cryptography</md-list-item>
+        </md-list>
+        <md-list flex="50">
+            <md-list-item>Plaintext</md-list-item>
+            <md-list-item>Ciphertext</md-list-item>
+            <md-list-item>Salt</md-list-item>
+        </md-list>
+    </div>
 </md-content>
 
 <md-fab-speed-dial md-direction="left" md-open="ctrl.openActions" ng-class="md-scale" class="md-fab-bottom-right">
