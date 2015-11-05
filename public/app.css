@@ -42,3 +42,8 @@
 .slide-container {
     position: relative;
 }
+
+.resources-list-item {
+    cursor: pointer;
+    cursor: hand;
+}
