@@ -58,7 +58,8 @@
                     <div flex>
                         <md-list>
                             <md-item ng-repeat="c in ctrl.chats">
-                                <h3 class="chat-list-item"><span ng-click="ctrl.goTo(c)">{{c.name}}</span></h3>
+                                <h3 class="chat-list-item"ng-show="$index !== 2"><span ng-click="ctrl.goTo(c)">{{c.name}}</span></h3>
+                                <md-divider ng-show="$index === 2"></md-divider>
                             </md-item>
                         </md-list>
                     </div>

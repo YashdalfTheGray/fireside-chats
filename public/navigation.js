@@ -20,7 +20,7 @@ angular.module('firesideChats')
             $rootScope.$on('titleChangedEvent', function(event, newTitle) {
                 vm.title = newTitle;
             });
-            vm.title = "Fireside Chats";
+            vm.title = 'Fireside Chats';
         }
     ]
 )
@@ -33,7 +33,12 @@ angular.module('firesideChats')
             var vm = this;
 
             vm.goTo = function goToState(chat) {
-                $rootScope.$emit('titleChangedEvent', chat.name);
+                if (chat.state === 'home') {
+                    $rootScope.$emit('titleChangedEvent', 'Fireside Chats');
+                }
+                else { 
+                    $rootScope.$emit('titleChangedEvent', chat.name);
+                }
                 $rootScope.maxSlides = chat.maxSlides;
                 $state.go(chat.state);
                 $mdSidenav('chats').close();
@@ -41,7 +46,9 @@ angular.module('firesideChats')
 
             vm.chats = [
                 { name: 'Security and Encryption', state: 'security-slide0', maxSlides: 9 },
-                { name: 'Async execution and Promises', state: 'async-slide0', maxSlides: 1 }
+                { name: 'Async execution and Promises', state: 'async-slide0', maxSlides: 1 },
+                { name: 'md-divider'},
+                { name: 'Home', state: 'home' }
             ];
         }
     ]
