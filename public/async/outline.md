@@ -10,9 +10,7 @@ With an asynchronous function, you can't return a value because it will simply n
 
 Callback functions have been used in Javascript (and other languages) to handle asynchronous operations. Simply declare a function with code that you want to run on the completion of the asynchronous task and pass it to the asynchronous function. JavaScript even lets you pass in anonymous handlers to asynchronous functions. 
 
-## Callback Hell
-
-Since asynchronous calls can't return values and can't throw errors but the execution of one still depends on the previous call, we quickly descend into what is called callback hell. It looks like this. 
+But asynchronous calls can't return values and can't throw errors and if the execution of one still depends on the previous call, we quickly descend into what is called "callback hell". It looks like this. 
 
 ```javascript
 server.getRegion(regionId, function(region) {
