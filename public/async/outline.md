@@ -53,3 +53,18 @@ savePictureToDisk(pictureFromTweet);
 ```
 
 The difference being that one works while the other one doesn't. 
+
+## Promises API
+
+
+
+## Deferred API
+
+
+
+## Chaining Promises
+
+
+
+## Waiting For Multiple Resolutions
+
