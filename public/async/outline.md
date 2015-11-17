@@ -35,7 +35,7 @@ This is the new standard in asynchronous operation. Promises provide a way to se
 This makes asynchronous code...
 
 ```javascript
-server.getTweets("win")
+server.getTweets('win')
 .then(openMostRecentTweet())
 .then(getPictureFromTweet())
 .then(function(picture) {
@@ -46,7 +46,7 @@ server.getTweets("win")
 ...read like synchronous code.
 
 ```javascript
-var tweets = server.getTweets("win"); // blocking
+var tweets = server.getTweets('win'); // blocking
 var recentTweet = tweets[0];
 var pictureFromTweet = server.getPicture(recentTweet); // blocking
 savePictureToDisk(pictureFromTweet);
@@ -54,12 +54,56 @@ savePictureToDisk(pictureFromTweet);
 
 The difference being that one works while the other one doesn't. 
 
-## Promises API
-
-
-
 ## Deferred API
 
+The deferred API is used when creating a promise. It offers 3 methods:
+
+* `deferred.resolve(result)` - resolves the promise with result which is passed back to the client.
+* `deferred.reject(reason)` - rejects the promise with an error or a reason of why it was rejected. 
+* `deferred.notify(progress)` - notifies the client of the state of the promise. 
+
+In Angular, a deferred object can be created using the `$q` library's `defer()` method. Simply assign it to a variable and use the API to control the state of the promise. The actual promise can be returned to the client by returning the `deferred.promise` object. 
+
+```javascript
+function asyncPromiseWrapper() {
+    var def = $q.defer();
+    asyncOperation(function(success) {
+        def.resolve(success);
+    }, function(error) {
+        def.reject(error);
+    });
+    return def.promise;
+}
+```
+
+## Promises API
+
+The promises API basically offers one function - `promise.then()`. This function takes 3 parameters, one to handle the value that is passed to `deferred.resolve()`, one to handle the errors/value passed to `deferred.reject()` and one to handle values passed into `deferred.notify()`.
+
+```javascript
+server.getTweets('win').then(function(result) {
+    // do something wiht the list of tweets here.
+}, function(error) {
+    // oh no, something went wrong.
+}, function(notification) {
+    // the progress of getTweets() is reported here 
+});
+```
+
+This can take another form using `catch()` and `finally()`.
+
+```javascript
+server.getTweets('win').then(function(result) {
+    // do something wiht the list of tweets here.
+}).catch(function(error) {
+    // oh no, something went wrong.
+}).finally(function() {
+    // this block will execute no matter what.
+    // it can be used for cleanup after the promise.
+}, function(notification) {
+    // the progress of getTweets() is reported here 
+});
+```
 
 
 ## Chaining Promises
