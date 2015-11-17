@@ -139,3 +139,25 @@ $q.all([
 });
 ```
 
+## Wrapping Other Thenables and Testing
+
+Angular's $q has a function to help with wrapping other thenables (promises from other libraries) and/or to aid in testing. Wrapping other promises with `$q.when()` isn't strictly necessary but $q integrates into the event and DOM update lifecycle which Angular can manage and schedule. Passing a variable into `$q.when()` creates a promise that resolves immediately. 
+
+```javascript
+// wrapping other thenables
+var myPromise = $('.myClass').promise(); //jQuery promise
+$q.when(myPromise).then(function(result) {
+    // do something with the result.
+    // The jQuery promise is now integrated into the
+    // Anngular event lifecycle. 
+});
+
+// testing
+function myAsyncFunction() {
+    // assume that this function returns a promise
+    // but for testing or mocking, it doesn't need
+    // to return a promise but the client code still
+    // expecting a promise.
+    return $q.when(someReturnValue);
+}
+```
