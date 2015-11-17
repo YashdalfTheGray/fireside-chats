@@ -108,7 +108,21 @@ server.getTweets('win').then(function(result) {
 
 ## Chaining Promises
 
+Promises can also be chained like successive function calls. They behave similar to perhaps the most well known code snippet in JavaScipt.
 
+```javascript
+'This is a sentence'.split(' ').reverse().join(' ');
+```
+
+Promises work in a similar fashion. A call to `promise.then()` returns another promise which is resolved when the original promise is resolved but another promise can be returned in its place. 
+
+```javascript
+server.getProfile(userId).then(function(result) {
+    return server.getPosts(result);
+}).then(function(posts) {
+    dom.updatePosts(posts);
+});
+```
 
 ## Waiting For Multiple Resolutions
 
