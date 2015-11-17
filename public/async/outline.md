@@ -126,3 +126,16 @@ server.getProfile(userId).then(function(result) {
 
 ## Waiting For Multiple Resolutions
 
+Multiple promises can also be processed in parallel using Angular's `$q.all()`. It takes one parameter which is an array of promises and it returns a single promise that resolves when all the promises in the array have been resolved. The result passed to the promise returned from `$q.all()` is an array of all the results from the array of promises.
+
+```javascript
+$q.all([
+    asyncFunction1(), // returns 1
+    asyncFunction2(), // returns 'Hello'
+    asyncFunction3()  // returns { foo: 'bar', baz: qux }
+]).then(function(results) {
+    console.log(results);
+    // will print [1, 'Hello', { foo: 'bar', baz: qux }]
+});
+```
+
