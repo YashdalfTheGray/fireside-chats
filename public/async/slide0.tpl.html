@@ -1,25 +1,13 @@
 <md-content layout-padding layout="column">
-    <h2 flex>Introduction</h2>
-    <div flex layout="row" layout-align="center center">
-        <img class="nothing-to-see-here" src="assets/nothing-to-see-here.jpg">
-    </div>
-</md-content>
+    <h2 flex>Agenda</h2>
 
-<md-fab-speed-dial md-direction="left" md-open="ctrl.openActions" ng-class="md-scale" class="md-fab-bottom-right">
-    <md-fab-trigger>
-        <md-button aria-label="Menu" class="md-fab md-primary" ng-mouseover="ctrl.openActions = true">
-            <i class="material-icons icon-button-adjust">more_vert</i>
-        </md-button>
-    </md-fab-trigger>
-    <md-fab-actions>
-        <md-button aria-label="Next" class="md-fab md-accent md-raised md-mini" ng-click="ctrl.next()" ng-disabled="ctrl.getSlideNum() === ctrl.maxSlides">
-            <i class="material-icons icon-button-adjust">arrow_forward</i>
-        </md-button>
-        <md-button aria-label="Back" class="md-fab md-raised md-mini" ng-click="ctrl.back()" ng-disabled="ctrl.getSlideNum() === 0">
-            <i class="material-icons icon-button-adjust">arrow_back</i>
-        </md-button>
-        <md-button aria-label="Home" class="md-fab md-raised md-mini" ng-mouseleave="ctrl.openActions = false" ng-click="ctrl.home()">
-            <i class="material-icons icon-button-adjust">home</i>
-        </md-button>
-    </md-fab-actions>
-</md-fab-speed-dial>
+    <md-list flex>
+        <md-list-item>Sync and Async</md-list-item>
+        <md-list-item>Promises</md-list-item>
+        <md-list-item>Deferred API</md-list-item>
+        <md-list-item>Promises API</md-list-item>
+        <md-list-item>Chaining</md-list-item>
+        <md-list-item>Multiple Resolutions</md-list-item>
+        <md-list-item>Wrapping Thenables and Tests</md-list-item>
+    </md-list>
+</md-content>
