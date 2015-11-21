@@ -94,6 +94,11 @@ angular.module('firesideChats',
                 url: '/async/5',
                 templateUrl: 'async/slide5.tpl.html',
                 controller: 'SlideCtrl as ctrl'
+            })
+            .state('async-slide6', {
+                url: '/async/6',
+                templateUrl: 'async/slide6.tpl.html',
+                controller: 'SlideCtrl as ctrl'
             });
             $urlRouterProvider.otherwise('/');
 
