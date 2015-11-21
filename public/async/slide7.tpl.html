@@ -1,0 +1,16 @@
+<md-content layout-padding layout-wrap>
+    <h2 flex>Wrapping Other Thenables</h2>
+    <md-content flex>
+        <p>Angular's <code>$q</code> can also be used to wrap promises from other sources.</p>
+        <md-list>
+            <md-list-item>- <code class="inline-code-spacing">$q.when()</code> takes a promise and returns an Angular promise.</md-list-item>
+            <md-list-item>- Integrates into Angular's model observation.</md-list-item>
+        </md-list>
+        <p><code>$q.when()</code> can also be useful when writing tests and mocks.</p>
+        <md-list>
+            <md-list-item>- <code class="inline-code-spacing">$q.when()</code> can also take a value and return a promise that resolves immediately.</md-list-item>
+            <md-list-item>- Good for mocking methods which return promises.</md-list-item>
+            <md-list-item>- Prevents complicated shims and code jank - client code doesn't change.</md-list-item>
+        </md-list>
+    </md-content>
+</md-content>

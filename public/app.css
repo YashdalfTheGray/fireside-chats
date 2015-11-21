@@ -53,6 +53,10 @@
     cursor: hand;
 }
 
+.inline-code-spacing {
+    padding: 0px 4px;
+}
+
 [ui-view].ng-enter, [ui-view].ng-leave {
     position: absolute;
     left: 0;
